@@ -36,7 +36,21 @@ const libreBaskerville = Libre_Baskerville({
 
 export const metadata: Metadata = {
   title: 'Sweat & Sound — Pâtisserie · Musique · Films',
-  description: 'Des recettes de pâtisserie associées à un film ou une playlist Spotify.',
+  description: 'Des recettes de pâtisserie inspirées par ta culture — films, musique, livres. Lis, écoute, pâtisse.',
+  metadataBase: new URL('https://sweatsound.vercel.app'),
+  openGraph: {
+    title: 'Sweat & Sound — Pâtisserie · Musique · Films',
+    description: 'Des recettes de pâtisserie inspirées par ta culture — films, musique, livres.',
+    url: 'https://sweatsound.vercel.app',
+    siteName: 'Sweat & Sound',
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sweat & Sound — Pâtisserie · Musique · Films',
+    description: 'Des recettes de pâtisserie inspirées par ta culture — films, musique, livres.',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
