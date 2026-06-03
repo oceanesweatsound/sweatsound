@@ -34,7 +34,7 @@ export default async function HomePage() {
           <p className={styles.heroEyebrow}>Pâtisserie × Musique × Cinéma × Littérature</p>
 
           <h1 className={styles.heroTitle}>
-            Sweat<em className={styles.amp}>&amp;</em>Sound
+            Sweat <em className={styles.amp}>&amp;</em> Sound
           </h1>
 
           <svg
