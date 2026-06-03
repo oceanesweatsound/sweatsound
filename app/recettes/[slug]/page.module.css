@@ -578,6 +578,105 @@
   }
 }
 
+/* ── SECTION SPOTIFY ─────────────────────────────── */
+.spotifySection {
+  background: #0d0d0d;
+  padding: 64px var(--pad);
+}
+
+/* ── SECTION LIVRE ────────────────────────────────── */
+.livreSection {
+  background: var(--choco);
+  padding: 64px var(--pad);
+}
+
+.livreInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 56px;
+  align-items: start;
+}
+
+.livreTexte {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.livreAuteur {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--on-choco-hint);
+  letter-spacing: 0.05em;
+}
+
+.livreGenre {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--roux);
+  background: rgba(193, 110, 52, 0.12);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.livreResumeTxt {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--on-choco-corps);
+  max-width: 620px;
+}
+
+.livreCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--roux);
+  text-decoration: none;
+  border: 1px solid rgba(193, 110, 52, 0.35);
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: fit-content;
+  transition: background 0.2s, color 0.2s;
+}
+.livreCta:hover {
+  background: var(--roux);
+  color: var(--creme);
+}
+
+.livreCouverture {
+  position: relative;
+  width: 200px;
+  aspect-ratio: 2/3;
+  flex-shrink: 0;
+}
+
+.livreCouvertureImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .livreInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .livreCouverture {
+    width: 140px;
+  }
+}
+
 /* ── GALERIE ──────────────────────────────────────── */
 .galerie {
   background: var(--creme-2);

@@ -424,6 +424,80 @@ export default async function RecettePage({ params }: Props) {
         </section>
       )}
 
+      {/* ── SECTION SPOTIFY (musique) ────────────────── */}
+      {isMusique && recette.musique?.spotifyUrl && (
+        <section className={styles.spotifySection}>
+          <div className={styles.videoInner}>
+            <div className={styles.videoTexte}>
+              <p className={styles.videoEyebrow}>🎵 Le son</p>
+              <h2 className={styles.videoTitre}>
+                {recette.musique.titreAlbum ?? recette.musique.artiste}
+              </h2>
+              {recette.musique.artiste && (
+                <p className={styles.videoCitation}>
+                  par {recette.musique.artiste}
+                </p>
+              )}
+              {recette.musique.pourquoi && (
+                <p className={styles.videoCitation}>
+                  « {recette.musique.pourquoi} »
+                </p>
+              )}
+              {recette.musique.ambiance && (
+                <p className={styles.videoPlateforme}>
+                  Ambiance : {recette.musique.ambiance}
+                </p>
+              )}
+            </div>
+            <div className={styles.videoEmbed}>
+              <SpotifyEmbed url={recette.musique.spotifyUrl} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── SECTION RÉSUMÉ LIVRE ─────────────────────── */}
+      {isLivre && recette.livre && (recette.livre.resume || recette.livre.lienAcheter) && (
+        <section className={styles.livreSection}>
+          <div className={styles.livreInner}>
+            <div className={styles.livreTexte}>
+              <p className={styles.videoEyebrow}>📚 Le livre</p>
+              <h2 className={styles.videoTitre}>{recette.livre.titre}</h2>
+              {recette.livre.auteur && (
+                <p className={styles.livreAuteur}>par {recette.livre.auteur}</p>
+              )}
+              {recette.livre.genre && (
+                <span className={styles.livreGenre}>{recette.livre.genre}</span>
+              )}
+              {recette.livre.resume && (
+                <p className={styles.livreResumeTxt}>{recette.livre.resume}</p>
+              )}
+              {recette.livre.lienAcheter && (
+                <a
+                  href={recette.livre.lienAcheter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.livreCta}
+                >
+                  En savoir plus sur ce livre →
+                </a>
+              )}
+            </div>
+            {recette.livre.couvertureUrl && (
+              <div className={styles.livreCouverture}>
+                <Image
+                  src={recette.livre.couvertureUrl}
+                  alt={recette.livre.titre ?? recette.nom}
+                  width={200}
+                  height={300}
+                  className={styles.livreCouvertureImg}
+                />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* ── GALERIE ───────────────────────────────────── */}
       {recette.galerie && recette.galerie.length > 0 && (
         <section className={styles.galerie}>

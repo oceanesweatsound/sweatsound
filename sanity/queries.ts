@@ -30,7 +30,7 @@ export const RECETTES_QUERY = defineQuery(`
     && ($tempsMax   == null || temps   <= $tempsMax)
     && ($tempsMin   == null || temps   >= $tempsMin)
     && ($categorie  == null || film.categorie == $categorie)
-  ] | order(_createdAt desc) {
+  ] | order(select(univers=="film"=>0,univers=="musique"=>1,univers=="livre"=>2) asc, _createdAt desc) {
     ${CARD_FIELDS}
   }
 `)
