@@ -152,6 +152,30 @@ export default async function HomePage() {
         </section>
       )}
 
+      {/* ── SECTION LIVRE ────────────────────────────────── */}
+      {featuredLivre?.livre && (
+        <section className={styles.livreSection}>
+          <div className={styles.livreInner}>
+            <div className={styles.livreTexte}>
+              <p className={styles.eyebrow}>📚 Livres</p>
+              <h2 className={styles.sectionTitre}>{featuredLivre.livre.titre}</h2>
+              {featuredLivre.livre.auteur && (
+                <p className={styles.livreAuteur}>par {featuredLivre.livre.auteur}</p>
+              )}
+              {featuredLivre.livre.resume && (
+                <p className={styles.livreResume}>{featuredLivre.livre.resume}</p>
+              )}
+              <Link href={`/recettes/${featuredLivre.slug}`} className={styles.videoLien}>
+                Voir la recette associée →
+              </Link>
+              <Link href="/recettes/livre" className={styles.videoAll}>
+                Toutes les recettes livre →
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── SECTION MUSIQUE (Spotify) ─────────────────────── */}
       {featuredMusique?.musique?.spotifyUrl && (
         <section className={styles.musiqueSection}>
@@ -174,30 +198,6 @@ export default async function HomePage() {
             </div>
             <div className={styles.musiquePlayer}>
               <SpotifyEmbed url={featuredMusique.musique.spotifyUrl} compact />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── SECTION LIVRE ────────────────────────────────── */}
-      {featuredLivre?.livre && (
-        <section className={styles.livreSection}>
-          <div className={styles.livreInner}>
-            <div className={styles.livreTexte}>
-              <p className={styles.eyebrow}>📚 Livres</p>
-              <h2 className={styles.sectionTitre}>{featuredLivre.livre.titre}</h2>
-              {featuredLivre.livre.auteur && (
-                <p className={styles.livreAuteur}>par {featuredLivre.livre.auteur}</p>
-              )}
-              {featuredLivre.livre.resume && (
-                <p className={styles.livreResume}>{featuredLivre.livre.resume}</p>
-              )}
-              <Link href={`/recettes/${featuredLivre.slug}`} className={styles.videoLien}>
-                Voir la recette associée →
-              </Link>
-              <Link href="/recettes/livre" className={styles.videoAll}>
-                Toutes les recettes livre →
-              </Link>
             </div>
           </div>
         </section>
