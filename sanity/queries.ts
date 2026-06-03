@@ -8,8 +8,8 @@ const CARD_FIELDS = `
   univers,
   "universNom": select(
     univers == "film"    => film.titre,
-    univers == "musique" => musique.artiste,
-    univers == "livre"   => livre.auteur,
+    univers == "musique" => musique.titreAlbum,
+    univers == "livre"   => livre.titre,
     ""
   ),
   description,
@@ -60,8 +60,8 @@ export const RECETTE_BY_SLUG_QUERY = defineQuery(`
     univers,
     "universNom": select(
       univers == "film"    => film.titre,
-      univers == "musique" => musique.artiste,
-      univers == "livre"   => livre.auteur,
+      univers == "musique" => musique.titreAlbum,
+      univers == "livre"   => livre.titre,
       ""
     ),
     description,
