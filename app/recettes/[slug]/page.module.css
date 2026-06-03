@@ -1,0 +1,673 @@
+/* ── HERO SPLITTÉ ──────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.heroImage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroEmoji {
+  font-size: 96px;
+  filter: drop-shadow(0 8px 32px rgba(61, 31, 10, 0.4));
+  opacity: 0.85;
+}
+
+.heroContent {
+  background: var(--choco);
+  padding: 120px 60px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-choco-hint);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.breadcrumb a { transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--on-choco-titre); }
+
+/* ── BADGES ── */
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--creme);
+  padding: 4px 12px;
+  display: inline-block;
+  box-shadow: 2px 2px 0 rgba(61, 31, 10, 0.3);
+  line-height: 1.4;
+}
+.badgeFilm    { background: var(--choco-2); transform: rotate(-2deg); }
+.badgeMusique { background: var(--roux);    transform: rotate(-2deg); }
+.badgeLivre   { background: var(--choco);   transform: rotate(-2deg); }
+
+.badgeHumeur {
+  font-family: var(--font-hand);
+  font-size: 13px;
+  color: var(--on-choco-corps);
+  padding: 4px 12px;
+  display: inline-block;
+  border: 1px solid rgba(242, 232, 213, 0.15);
+  line-height: 1.4;
+}
+
+/* ── TITRE ── */
+.titre {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 56px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--on-choco-titre);
+  line-height: 1.1;
+}
+
+/* ── STATS ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(242, 232, 213, 0.08);
+  border: 1px solid rgba(242, 232, 213, 0.08);
+}
+
+.stat {
+  background: rgba(242, 232, 213, 0.04);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--on-choco-titre);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-choco-hint);
+}
+
+/* ── UNIVERS BOX ── */
+.universBloc {
+  padding: 20px 24px 24px;
+  background: rgba(242, 232, 213, 0.05);
+  border: 1px solid rgba(242, 232, 213, 0.1);
+  border-left: 3px solid var(--roux);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Petite étiquette de type : "🎬 Film" */
+.universEyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--roux);
+  margin-bottom: 2px;
+}
+
+/* Titre principal : nom du film / artiste / livre */
+.universTitre {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--on-choco-titre);
+  line-height: 1.15;
+}
+
+/* Année · Réalisateur ou Album · Genre */
+.universMeta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--on-choco-meta);
+}
+
+/* Citation "pourquoi" */
+.universBlocText {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--on-choco-corps);
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+/* Plateformes / ambiance */
+.universBlocSub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--on-choco-hint);
+  margin-top: 2px;
+}
+
+/* ── POCHETTE FILM ── */
+/* Conteneur principal : colonne pour que la citation passe pleine largeur */
+.universFilmLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Ligne 1 : affiche + titre / méta côte à côte */
+.universFilmHeader {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Affiche — ratio 2:3 (portrait cinéma) */
+.universFilmPochette {
+  position: relative;
+  width: 88px;
+  min-width: 88px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.45);
+}
+
+.universFilmTexte {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── DESCRIPTION ── */
+.description {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-choco-corps);
+  line-height: 1.6;
+}
+
+/* ── UNIVERS EMBED ── */
+.universEmbed { margin-top: 12px; }
+
+/* ── SPOTIFY / LIVRE EXTRAS ── */
+.spotifyEmbed { border-radius: 8px; margin-top: 8px; }
+
+.spotifyPlaceholder {
+  font-family: var(--font-hand);
+  font-size: 16px;
+  color: var(--on-choco-corps);
+  padding: 16px;
+  border: 1px dashed rgba(242, 232, 213, 0.2);
+  text-align: center;
+}
+
+.livreResume {
+  font-family: var(--font-hand);
+  font-size: 16px;
+  color: var(--on-choco-corps);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.livreLien {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--roux);
+  transition: opacity 0.2s;
+}
+.livreLien:hover { opacity: 0.75; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .heroImage { position: relative; height: 260px; top: 0; }
+  .heroContent { padding: 60px 24px 48px; min-height: auto; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── CORPS RECETTE ──────────────────────────────────── */
+.corps {
+  background: var(--creme);
+  padding: clamp(64px, 8vw, 80px) var(--pad);
+}
+
+.corpsInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── SIDEBAR ──────────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebarCard {
+  background: var(--creme-2);
+  border: 1px solid rgba(61, 31, 10, 0.1);
+  border-top: 3px solid var(--roux);
+  overflow: hidden;
+}
+
+/* Header carte ingrédients */
+.sidebarCardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid rgba(61, 31, 10, 0.08);
+}
+
+.sidebarTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin: 0;
+}
+
+/* Badge nombre d'ingrédients */
+.ingredientCount {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--creme);
+  background: var(--roux);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.ingredientsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredientItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 24px;
+  border-bottom: 1px solid rgba(61, 31, 10, 0.06);
+  transition: background 0.15s;
+}
+.ingredientItem:last-child { border-bottom: none; }
+.ingredientItem:hover { background: rgba(61, 31, 10, 0.03); }
+
+/* Tag quantité — fond roux plein, texte crème */
+.ingredientQuantite {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--creme);
+  background: var(--roux);
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Nom de l'ingrédient */
+.ingredientNom {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 14px;
+  color: var(--on-creme-corps);
+  line-height: 1.3;
+}
+
+.sidebarMeta {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(61, 31, 10, 0.1);
+}
+
+.sidebarMetaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(61, 31, 10, 0.06);
+}
+.sidebarMetaRow:last-child { border-bottom: none; }
+
+.sidebarMetaLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-creme-meta);
+}
+
+.sidebarMetaValue {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--on-creme-titre);
+}
+
+/* ── ÉTAPES ───────────────────────────────────────── */
+.etapes {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.etapesTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 32px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 40px;
+}
+
+.etape {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 24px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.etapeNumero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.etapeNumero span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--on-creme-meta);
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(61, 31, 10, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etapeConnecteur {
+  position: absolute;
+  left: 19px;
+  top: 52px;
+  bottom: 0;
+  width: 1px;
+  border-left: 1px dashed rgba(61, 31, 10, 0.15);
+}
+
+.etapesEmpty {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  color: var(--on-creme-meta);
+  text-align: center;
+  padding: 48px 0;
+}
+
+.etapePhoto {
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.etapeContent { padding-bottom: 8px; }
+
+.etapeTitre {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 8px;
+}
+
+.etapeDesc {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--on-creme-corps);
+}
+
+.etapeTip {
+  display: flex;
+  gap: 10px;
+  background: var(--creme-2);
+  border-left: 3px solid var(--roux);
+  padding: 12px 16px;
+  margin-top: 14px;
+}
+
+.etapeTip p {
+  font-family: var(--font-hand);
+  font-size: 16px;
+  color: var(--on-creme-corps);
+  line-height: 1.5;
+}
+
+.conseil {
+  display: flex;
+  gap: 20px;
+  background: var(--creme-2);
+  border: 1px solid rgba(61, 31, 10, 0.1);
+  padding: 28px;
+  margin-top: 16px;
+}
+
+.conseilEmoji { font-size: 32px; flex-shrink: 0; }
+
+.conseilLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--roux);
+  margin-bottom: 8px;
+}
+
+.conseilText {
+  font-family: var(--font-hand);
+  font-size: 19px;
+  color: var(--on-creme-titre);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .corpsInner { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}
+
+/* ── SECTION VIDÉO ───────────────────────────────── */
+.videoSection {
+  background: var(--choco);
+  padding: 64px var(--pad);
+}
+
+.videoInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.videoTexte {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.videoEyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--roux);
+}
+
+.videoTitre {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-style: italic;
+  color: var(--on-choco-titre);
+  line-height: 1.2;
+}
+
+.videoCitation {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--on-choco-corps);
+  line-height: 1.6;
+}
+
+.videoPlateforme {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--on-choco-hint);
+}
+
+.videoEmbed { width: 100%; }
+
+@media (max-width: 768px) {
+  .videoInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ── GALERIE ──────────────────────────────────────── */
+.galerie {
+  background: var(--creme-2);
+  padding: 64px var(--pad);
+}
+
+.galerieInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.galerieItem {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .galerieInner { grid-template-columns: 1fr; }
+}
+
+/* ── PARTAGE ──────────────────────────────────────── */
+.partage {
+  background: var(--choco);
+  padding: 40px var(--pad);
+}
+
+.partageInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.partageLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--on-choco-hint);
+}
+
+.partageButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.partageBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-choco-meta);
+  border: 1px solid rgba(242, 232, 213, 0.15);
+  padding: 10px 20px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.partageBtn:hover {
+  background: rgba(242, 232, 213, 0.07);
+  border-color: rgba(242, 232, 213, 0.35);
+  color: var(--on-choco-titre);
+}
+
+/* ── SIMILAIRES ───────────────────────────────────── */
+.similaires {
+  padding: clamp(64px, 8vw, 80px) var(--pad);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.similairesTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 38px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 40px;
+}
+
+.similairesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+@media (max-width: 768px) {
+  .similairesGrid { grid-template-columns: 1fr; }
+}

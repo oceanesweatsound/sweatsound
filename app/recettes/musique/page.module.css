@@ -1,0 +1,108 @@
+.main { min-height: 100vh; background: var(--creme); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--roux);
+  padding: calc(var(--nav-h) + 64px) var(--pad) 72px;
+}
+.heroInner { max-width: var(--max-w); margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242, 232, 213, 0.7);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.titre {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 6vw, 72px);
+  font-style: italic;
+  color: var(--creme);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.sub {
+  font-family: var(--font-hand);
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: rgba(242, 232, 213, 0.85);
+  margin-bottom: 40px;
+}
+
+.heroCtas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.ctaBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--choco);
+  color: var(--creme);
+  padding: 14px 28px;
+  transition: opacity 0.2s;
+}
+.ctaBtn:hover { opacity: 0.85; }
+
+.ctaSecondaire {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 232, 213, 0.8);
+  border: 1px solid rgba(242, 232, 213, 0.3);
+  padding: 14px 28px;
+  transition: border-color 0.2s;
+}
+.ctaSecondaire:hover { border-color: rgba(242, 232, 213, 0.7); }
+
+/* ── TOP ── */
+.top { background: var(--creme-2); padding: 64px var(--pad); }
+.topInner { max-width: var(--max-w); margin: 0 auto; }
+.topGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: 32px; }
+
+.sectionTitre {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+}
+
+/* ── LISTE ── */
+.liste { padding: 48px var(--pad) 80px; }
+.listeInner { max-width: var(--max-w); margin: 0 auto; }
+
+.tabs { display: flex; gap: 0; border-bottom: 1px solid rgba(61,31,10,.1); overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--on-creme-meta); padding: 14px 20px; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s, border-color .15s; }
+.tab:hover { color: var(--on-creme-titre); }
+.tabActive { color: var(--roux); border-bottom-color: var(--roux); }
+
+/* ── SPOTIFY ── */
+.spotify { background: var(--choco); padding: 64px var(--pad); }
+.spotifyInner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.spotifyText .sectionTitre { color: var(--on-choco-titre); margin: 12px 0 8px; }
+.spotifyAlbum { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--on-choco-meta); margin-bottom: 14px; }
+.spotifySub { font-family: var(--font-hand); font-size: 18px; color: var(--on-choco-corps); margin-bottom: 16px; line-height: 1.6; }
+.spotifyAmbiance { font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--on-choco-hint); background: rgba(242,232,213,.08); padding: 4px 10px; display: inline-block; margin-bottom: 24px; }
+.spotifyLien { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--roux); transition: opacity .2s; display: block; }
+.spotifyLien:hover { opacity: .75; }
+
+/* ── SORTIES ── */
+.sorties { padding: 64px var(--pad); }
+.sortiesInner { max-width: var(--max-w); margin: 0 auto; }
+.sortiesSub { font-family: var(--font-hand); font-size: 18px; color: var(--on-creme-meta); margin: 12px 0 32px; }
+.sortiesPlaceholder { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+.sortiesCard { background: var(--creme-2); border: 1px solid rgba(61,31,10,.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.sortiesEmoji { font-size: 28px; }
+.sortiesLabel { font-family: var(--font-body), Georgia, serif; font-size: 15px; color: var(--on-creme-corps); }
+.sortiesBientot { font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--on-creme-meta); background: var(--creme-3); padding: 4px 10px; margin-top: auto; }
+
+@media (max-width: 900px) {
+  .topGrid { grid-template-columns: 1fr; }
+  .spotifyInner { grid-template-columns: 1fr; }
+  .sortiesPlaceholder { grid-template-columns: 1fr; }
+}

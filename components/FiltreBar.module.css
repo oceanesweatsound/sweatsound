@@ -1,0 +1,137 @@
+/* ── Conteneur principal ── */
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0 28px;
+  border-bottom: 1px solid rgba(61, 31, 10, 0.08);
+  margin-bottom: 32px;
+}
+
+/* ── Ligne principale : Difficulté + Temps + reset ── */
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* ── Groupe (label empilé au-dessus des chips) ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Ligne catégorie (film) ── */
+.groupCategorie {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Étiquette ── */
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--on-creme-meta);
+  line-height: 1;
+}
+
+/* ── Rangée de chips ── */
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── Chip de base ── */
+.chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--on-creme-corps);
+  background: var(--creme);
+  border: 1px solid rgba(61, 31, 10, 0.2);
+  padding: 6px 14px;
+  border-radius: 99px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+
+.chip:hover {
+  border-color: var(--choco);
+  color: var(--on-creme-titre);
+}
+
+/* Actif — niveau / temps : fond choco */
+.active {
+  background: var(--choco);
+  color: var(--creme);
+  border-color: var(--choco);
+}
+
+.active:hover {
+  background: var(--choco);
+  color: var(--creme);
+  border-color: var(--choco);
+}
+
+/* ── Chip catégorie (film) — même base, active roux ── */
+.chipCategorie {
+  font-size: 11px;
+  padding: 5px 13px;
+}
+
+.chipCategorie:hover {
+  border-color: var(--roux);
+  color: var(--roux);
+}
+
+.activeCategorie {
+  background: var(--roux);
+  color: var(--creme);
+  border-color: var(--roux);
+}
+
+.activeCategorie:hover {
+  background: var(--roux);
+  color: var(--creme);
+  border-color: var(--roux);
+}
+
+/* ── Bouton reset ── */
+.reset {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--on-creme-meta);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  transition: color 0.15s;
+  /* aligne sur le bas avec les chips */
+  align-self: flex-end;
+  margin-bottom: 1px;
+}
+
+.reset:hover { color: var(--roux); }
+
+/* ── Placeholder Suspense ── */
+.placeholder { height: 100px; }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .row { gap: 16px; }
+  .chip { font-size: 10px; padding: 5px 11px; }
+  .chipCategorie { font-size: 10px; padding: 5px 10px; }
+  .label { font-size: 8px; }
+}

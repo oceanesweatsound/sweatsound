@@ -1,0 +1,264 @@
+.main { min-height: 100vh; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--choco);
+  padding: calc(var(--nav-h) + 64px) var(--pad) 64px;
+}
+.heroInner { max-width: var(--max-w); margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-choco-meta);
+  margin-bottom: 14px;
+}
+
+.titre {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 6vw, 72px);
+  font-style: italic;
+  color: var(--on-choco-titre);
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.sub {
+  font-family: var(--font-hand);
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--on-choco-corps);
+}
+
+/* ── SECTION GÉNÉRIQUE ── */
+.sectionEyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--roux);
+  margin-bottom: 10px;
+}
+
+.sectionTitre {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 12px;
+}
+
+.sectionSub {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-creme-corps);
+  line-height: 1.6;
+}
+
+/* ── PROPOSER ── */
+.proposer {
+  background: var(--creme);
+  padding: 80px var(--pad);
+  border-bottom: 1px solid rgba(61, 31, 10, 0.08);
+}
+.proposerInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.proposerTexte {}
+.regles {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.regles li {
+  font-family: var(--font-hand);
+  font-size: 16px;
+  color: var(--on-creme-corps);
+  line-height: 1.5;
+}
+.proposerForm {
+  background: var(--creme-2);
+  border: 1px solid rgba(61, 31, 10, 0.1);
+  padding: 40px;
+}
+
+/* ── VOTES ── */
+.votes {
+  background: var(--creme-2);
+  padding: 80px var(--pad);
+}
+.votesInner { max-width: var(--max-w); margin: 0 auto; }
+
+.votesHeader { margin-bottom: 48px; }
+
+.vide {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-creme-meta);
+  text-align: center;
+  padding: 48px;
+}
+
+.votesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(61, 31, 10, 0.08);
+  border: 1px solid rgba(61, 31, 10, 0.08);
+}
+
+.voteCard {
+  display: flex;
+  gap: 0;
+  background: var(--creme);
+  align-items: stretch;
+}
+
+.voteType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px 18px;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+.voteType span:first-child { font-size: 20px; }
+.voteType span:last-child {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.voteType_film    { background: var(--choco); }
+.voteType_musique { background: var(--roux); }
+.voteType_livre   { background: var(--choco-2); }
+
+.voteInfo {
+  flex: 1;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.voteNom {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--on-creme-titre);
+}
+
+.voteMeta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--on-creme-meta);
+}
+
+.voteRecette {
+  font-family: var(--font-hand);
+  font-size: 15px;
+  color: var(--on-creme-corps);
+}
+
+.voteMessage {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 13px;
+  color: var(--on-creme-meta);
+  font-style: italic;
+}
+
+.voteAuteur {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--on-creme-meta);
+  margin-top: 4px;
+}
+
+/* ── HALL OF FAME ── */
+.hof {
+  background: var(--choco);
+  padding: 80px var(--pad);
+}
+.hofInner { max-width: var(--max-w); margin: 0 auto; }
+.hofInner .sectionEyebrow { color: var(--on-choco-meta); }
+.hofInner .sectionSub { color: var(--on-choco-corps); }
+
+.hofTitre {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-style: italic;
+  color: var(--on-choco-titre);
+  margin-bottom: 12px;
+}
+
+.hofGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  margin-top: 40px;
+}
+
+.hofCard {
+  background: rgba(242, 232, 213, 0.06);
+  border: 1px solid rgba(242, 232, 213, 0.12);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.hofBadge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--roux);
+}
+
+.hofEmoji { font-size: 24px; }
+
+.hofNom {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--on-choco-titre);
+}
+
+.hofRecette {
+  font-family: var(--font-hand);
+  font-size: 15px;
+  color: var(--on-choco-corps);
+}
+
+.hofAuteur {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--on-choco-meta);
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .proposerInner { grid-template-columns: 1fr; gap: 40px; }
+  .hofGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .proposerForm { padding: 24px 20px; }
+}

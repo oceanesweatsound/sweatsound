@@ -1,0 +1,598 @@
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  background: var(--choco);
+  background-image: radial-gradient(ellipse at 50% 60%, var(--choco-2) 0%, var(--choco) 65%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroInner {
+  text-align: center;
+  padding: 120px var(--pad) 80px;
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeUp 0.9s ease both;
+}
+
+.heroEyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-choco-meta);
+  margin-bottom: 24px;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 11vw, 120px);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--on-choco-titre);
+  margin-bottom: 16px;
+}
+
+.amp {
+  color: var(--roux);
+  font-style: italic;
+}
+
+.wave {
+  width: 320px;
+  height: 24px;
+  margin: 0 auto 24px;
+}
+
+.wavePath {
+  animation: waveDraw 2s ease 0.6s both;
+}
+
+.heroTagline {
+  font-family: var(--font-hand);
+  font-size: clamp(18px, 4.5vw, 26px);
+  color: var(--on-choco-corps);
+  margin-bottom: 48px;
+  line-height: 1.4;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background: var(--roux);
+  color: var(--creme);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.ctaPrimary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+.ctaSecondary {
+  border: 1px solid rgba(242, 232, 213, 0.3);
+  color: var(--on-choco-titre);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.ctaSecondary:hover { border-color: rgba(242, 232, 213, 0.6); transform: translateY(-2px); }
+
+.tornEdge {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  pointer-events: none;
+}
+.tornEdge svg { width: 100%; height: 100%; display: block; }
+
+/* ── HERO mobile ─────────────────────────────────── */
+@media (max-width: 600px) {
+  .heroInner {
+    padding: 100px 20px 70px;
+  }
+
+  .heroEyebrow {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .wave {
+    width: min(280px, 85vw);
+  }
+
+  .heroTagline {
+    font-size: 18px;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ── STRIP ───────────────────────────────────────── */
+.strip {
+  background: var(--choco);
+  border-bottom: 1px solid rgba(242, 232, 213, 0.07);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 14px 0;
+}
+.strip::-webkit-scrollbar { display: none; }
+
+.stripTrack {
+  display: flex;
+  white-space: nowrap;
+  padding: 0 var(--pad);
+}
+
+.stripItem {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--on-choco-meta);
+  text-transform: uppercase;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(242, 232, 213, 0.08);
+}
+.stripItem:last-child { border-right: none; }
+
+.stripDot { color: var(--roux); font-size: 8px; }
+
+/* ── SPLIT UNIVERS ────────────────────────────────── */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.splitBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 60px);
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.2s;
+}
+.splitBlock:hover { filter: brightness(1.14); }
+
+.splitFilm    { background: var(--choco); }
+.splitPlaylist { background: var(--choco-2); }
+
+.splitIcon { font-size: 48px; margin-bottom: 8px; }
+
+.splitTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 52px);
+  font-style: italic;
+  color: var(--on-choco-titre);
+}
+
+.splitSub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--on-choco-meta);
+  text-transform: uppercase;
+}
+
+.splitArrow {
+  font-size: 28px;
+  color: var(--roux);
+  margin-top: auto;
+  padding-top: 24px;
+  transition: transform 0.2s;
+}
+.splitBlock:hover .splitArrow { transform: translateX(8px); }
+
+@media (max-width: 768px) {
+  .split { grid-template-columns: 1fr; }
+}
+
+/* ── GRILLE RECETTES ──────────────────────────────── */
+.grille {
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.grilleHeader { margin-bottom: 48px; }
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 52px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 8px;
+}
+
+.sectionSub {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: var(--on-creme-meta);
+}
+
+.grilleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.grilleFeatured { grid-row: span 2; }
+
+.grilleSmall {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.grilleMore {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.btnOutline {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--choco);
+  color: var(--on-creme-titre);
+  padding: 14px 32px;
+  transition: background 0.2s, color 0.2s;
+}
+.btnOutline:hover { background: var(--choco); color: var(--creme); }
+
+@media (max-width: 900px) {
+  .grilleGrid { grid-template-columns: 1fr; }
+  .grilleFeatured { grid-row: span 1; }
+}
+
+/* ── MOMENT DU JOUR ───────────────────────────────── */
+.moment {
+  background: var(--roux);
+  padding: clamp(64px, 8vw, 80px) var(--pad);
+}
+
+.momentInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 64px;
+  align-items: center;
+}
+
+.momentEyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(242, 232, 213, 0.7);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.momentTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-style: italic;
+  color: var(--creme);
+  margin-bottom: 12px;
+}
+
+.momentSub {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: rgba(242, 232, 213, 0.75);
+}
+
+@media (max-width: 900px) {
+  .momentInner { grid-template-columns: 1fr; }
+}
+
+/* ── CTA COMMUNAUTÉ ───────────────────────────────── */
+.ctaCommunaute {
+  background: var(--creme-2);
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+}
+
+.ctaInner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaEmoji {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 16px;
+}
+
+.ctaText {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: var(--on-creme-corps);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background: var(--choco);
+  color: var(--creme);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  transition: background 0.2s, transform 0.15s;
+}
+.ctaBtn:hover { background: var(--roux); transform: translateY(-2px); }
+
+/* ── EYEBROW GLOBAL ──────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--roux);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ── PRÉSENTATION CONCEPT ─────────────────────────── */
+.concept {
+  background: var(--creme);
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+  border-top: 1px solid rgba(61, 31, 10, 0.06);
+}
+.conceptInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.conceptSub {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-creme-corps);
+  line-height: 1.7;
+  margin-top: 16px;
+}
+.conceptCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.conceptCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--creme-2);
+  border: 1px solid rgba(61, 31, 10, 0.08);
+  border-left: 3px solid var(--card-color, var(--choco));
+  padding: 20px 24px;
+  transition: background 0.2s;
+}
+.conceptCard:hover { background: var(--creme-3); }
+.conceptEmoji { font-size: 28px; flex-shrink: 0; }
+.conceptLabel {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--on-creme-titre);
+  min-width: 70px;
+}
+.conceptDesc {
+  font-family: var(--font-hand);
+  font-size: 14px;
+  color: var(--on-creme-corps);
+  flex: 1;
+  line-height: 1.5;
+}
+.conceptArrow {
+  font-size: 18px;
+  color: var(--roux);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── GRILLE RECETTES ──────────────────────────────── */
+.grille { padding: clamp(64px, 8vw, 96px) var(--pad); background: var(--creme-2); }
+.grilleInner { max-width: var(--max-w); margin: 0 auto; }
+.grilleHeader { margin-bottom: 40px; }
+.grilleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.grillePlaceholder {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-creme-meta);
+  text-align: center;
+  padding: 48px;
+}
+.grilleMore { margin-top: 40px; text-align: center; }
+
+/* ── SECTION VIDÉO ────────────────────────────────── */
+.videoSection {
+  background: var(--choco);
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+}
+.videoInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.videoTexte { display: flex; flex-direction: column; gap: 16px; }
+.videoTexte .sectionTitre { color: var(--on-choco-titre); margin: 0; }
+.videoCitation {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-choco-corps);
+  font-style: italic;
+  line-height: 1.6;
+}
+.videoLien {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--roux);
+  transition: opacity 0.2s;
+}
+.videoLien:hover { opacity: 0.75; }
+.videoAll {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--on-choco-hint);
+  transition: color 0.2s;
+}
+.videoAll:hover { color: var(--on-choco-meta); }
+
+/* ── SECTION MUSIQUE ──────────────────────────────── */
+.musiqueSection {
+  background: var(--roux);
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+}
+.musiqueInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.musiqueTexte { display: flex; flex-direction: column; gap: 14px; }
+.musiqueTexte .eyebrow { color: rgba(242, 232, 213, 0.7); }
+.musiqueArtiste {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-style: italic;
+  color: var(--creme);
+  line-height: 1.1;
+}
+.musiqueAlbum {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(242, 232, 213, 0.65);
+}
+.musicSub {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  color: rgba(242, 232, 213, 0.8);
+  line-height: 1.6;
+}
+.musiqueTexte .videoLien { color: var(--creme); }
+.musiqueTexte .videoAll { color: rgba(242, 232, 213, 0.6); }
+
+/* ── SECTION LIVRE ────────────────────────────────── */
+.livreSection {
+  background: var(--creme-2);
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+  border-top: 1px solid rgba(61, 31, 10, 0.08);
+}
+.livreInner { max-width: var(--max-w); margin: 0 auto; max-width: 700px; }
+.livreTexte { display: flex; flex-direction: column; gap: 14px; }
+.livreAuteur {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--on-creme-meta);
+}
+.livreResume {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--on-creme-corps);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── RESPONSIVE SECTIONS ──────────────────────────── */
+@media (max-width: 900px) {
+  .conceptInner { grid-template-columns: 1fr; gap: 40px; }
+  .grilleGrid { grid-template-columns: 1fr; }
+  .videoInner { grid-template-columns: 1fr; }
+  .musiqueInner { grid-template-columns: 1fr; }
+}
+
+/* ── NEWSLETTER ───────────────────────────────────── */
+.newsletter {
+  background: var(--choco);
+  padding: clamp(64px, 8vw, 96px) var(--pad);
+}
+
+.newsletterInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.newsletterTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 38px);
+  font-style: italic;
+  color: var(--on-choco-titre);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.newsletterSub {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: var(--on-choco-corps);
+}
+
+@media (max-width: 900px) {
+  .newsletterInner { grid-template-columns: 1fr; gap: 32px; }
+}

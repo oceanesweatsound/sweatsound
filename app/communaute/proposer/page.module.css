@@ -1,0 +1,330 @@
+.main { padding-top: 80px; }
+
+/* ── HEADER ──────────────────────────────────────── */
+.header {
+  background: var(--chocolat);
+  text-align: center;
+  padding: 80px 40px 64px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--miel-clair);
+  margin-bottom: 16px;
+}
+
+.titre {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 6vw, 72px);
+  font-style: italic;
+  color: var(--creme);
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: rgba(247, 240, 226, 0.65);
+  line-height: 1.6;
+}
+
+/* ── FORMULAIRES CÔTE À CÔTE ─────────────────────── */
+.formsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+
+.formBloc {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.formFilm    { background: var(--bleu-film); }
+.formPlaylist { background: var(--vert-playlist); }
+
+.formBlocHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.formIcon { font-size: 32px; }
+
+.formTitre {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--creme);
+}
+
+.success {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--creme);
+  background: rgba(247, 240, 226, 0.12);
+  border: 1px solid rgba(247, 240, 226, 0.25);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247, 240, 226, 0.65);
+}
+
+.input {
+  background: rgba(247, 240, 226, 0.1);
+  border: 1px solid rgba(247, 240, 226, 0.18);
+  color: var(--creme);
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.input:focus {
+  border-color: rgba(247, 240, 226, 0.45);
+  background: rgba(247, 240, 226, 0.16);
+}
+
+.input::placeholder { color: rgba(247, 240, 226, 0.28); }
+
+.submitBtn {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: var(--creme);
+  color: var(--chocolat);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.submitBtn:hover {
+  background: var(--miel-clair);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .formsSection { grid-template-columns: 1fr; }
+  .formBloc { padding: 40px 24px; }
+}
+
+/* ── VOTES ────────────────────────────────────────── */
+.votesSection {
+  padding: 80px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTitre {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-style: italic;
+  color: var(--chocolat);
+  margin-bottom: 8px;
+}
+
+.sectionSub {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: rgba(58, 31, 8, 0.5);
+  margin-bottom: 36px;
+}
+
+.votesList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.voteCard {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(58, 31, 8, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.2s;
+}
+
+.voteCard:hover { box-shadow: 0 4px 20px rgba(58, 31, 8, 0.07); }
+
+.voteType {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.voteInfo { min-width: 0; }
+
+.voteNom {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--chocolat);
+  margin-bottom: 4px;
+}
+
+.voteMeta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(58, 31, 8, 0.4);
+  margin-bottom: 6px;
+}
+
+.voteRecette {
+  font-family: var(--font-hand);
+  font-size: 16px;
+  color: var(--miel);
+  margin-bottom: 4px;
+}
+
+.voteAuteur {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(58, 31, 8, 0.35);
+}
+
+.voteBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid rgba(58, 31, 8, 0.15);
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--chocolat-mid);
+  font-size: 16px;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.voteBtn:hover:not(.voted) {
+  border-color: var(--miel);
+  color: var(--miel);
+  transform: scale(1.05);
+}
+
+.voted {
+  border-color: var(--miel);
+  color: var(--miel);
+  cursor: default;
+}
+
+.voteCount {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--chocolat);
+}
+
+@media (max-width: 640px) {
+  .votesSection { padding: 60px 20px; }
+}
+
+/* ── HALL OF FAME ─────────────────────────────────── */
+.hofSection {
+  background: var(--chocolat);
+  padding: 80px 40px;
+}
+
+.hofTitre {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-style: italic;
+  color: var(--creme);
+  margin-bottom: 8px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hofSub {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: rgba(247, 240, 226, 0.5);
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hofGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hofCard {
+  border: 1px solid rgba(247, 240, 226, 0.12);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hofBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--miel-clair);
+}
+
+.hofNom {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--creme);
+}
+
+.hofRecette {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  color: rgba(247, 240, 226, 0.65);
+}
+
+.hofAuteur {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(247, 240, 226, 0.35);
+  margin-top: auto;
+  padding-top: 8px;
+}

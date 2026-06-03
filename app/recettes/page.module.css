@@ -1,0 +1,70 @@
+.main { min-height: 100vh; }
+
+/* ── Hero ── */
+.hero {
+  background: var(--creme-2);
+  padding: calc(var(--nav-h) + 48px) var(--pad) 48px;
+  border-bottom: 1px solid rgba(61, 31, 10, 0.08);
+}
+
+.heroInner { max-width: var(--max-w); margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--roux);
+  margin-bottom: 10px;
+}
+
+.titre {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 6vw, 64px);
+  font-style: italic;
+  color: var(--on-creme-titre);
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: var(--on-creme-meta);
+}
+
+/* ── Contenu ── */
+.content {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px var(--pad) 80px;
+}
+
+/* ── Onglets univers ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(61, 31, 10, 0.1);
+  margin-bottom: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-creme-meta);
+  padding: 14px 20px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover { color: var(--on-creme-titre); }
+
+.tabActive {
+  color: var(--choco);
+  border-bottom-color: var(--choco);
+}
